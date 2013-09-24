@@ -1,5 +1,5 @@
 {
-  "name": "tracer",
+  "name": "service_tracer",
   "version": "0.0.1",
   "description": "trace common operations",
   "homepage": "",
