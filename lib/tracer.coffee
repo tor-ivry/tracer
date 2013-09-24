@@ -3,7 +3,6 @@ class Tracer
     @prefix = opts.service_name
     @log = log
     @stats = stats
-    @times = {}
 
   error: (message, object) ->
     @log.error(message, object)
@@ -18,12 +17,9 @@ class Tracer
     @stats.inc "#{@prefix}.#{label}.error"
 
   start: (key) ->
-    @times[key] = new Date()
-    return key
-
-  stop: (key) =>
-    @_timing(key, @times[key])
-    delete @times[key]
+    start = new Date()
+    return =>
+      @_timing(key, start)
 
   measure: (key, fn)=>
     start = new Date()

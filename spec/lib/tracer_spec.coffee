@@ -34,8 +34,8 @@ describe 'Tracer', ->
   it "measures times", ->
     sinon.spy(@tr.stats, 'timing')
     sinon.spy(@tr.log, 'debug')
-    @tr.start 'measure'
-    @tr.stop 'measure'
+    stop = @tr.start 'measure'
+    stop()
 
     @tr.stats.timing.calledWith("tracer.measure.time", 0).should.be.ok
     @tr.log.debug.calledWith("Timing of tracer.measure.time: 0").should.be.ok
