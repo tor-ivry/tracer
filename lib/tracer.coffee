@@ -5,12 +5,17 @@ class Tracer
     @stats = stats
     @times = {}
 
-  trace: (label, message, object)->
+  error: (message, object) ->
     @log.error(message, object)
+
+  trace: (label, message, object)->
+    if message
+      @log.debug(message, object)
     @stats.inc "#{@prefix}.#{label}"
 
-  error: (label, message, err)->
-    @trace("#{label}.error", message, err)
+  fail: (label, message, err)->
+    @error(message, err)
+    @stats.inc "#{@prefix}.#{label}.error"
 
   start: (key) ->
     @times[key] = new Date()

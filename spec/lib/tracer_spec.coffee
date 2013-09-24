@@ -1,5 +1,5 @@
 lib = '../../lib'
-Tracer = require "#{lib}/tracer"
+Tracer = require "#{lib}/tracer.coffee"
 sinon = require 'sinon'
 should = require 'should'
 
@@ -26,7 +26,7 @@ describe 'Tracer', ->
     sinon.spy(@tr.log, 'error')
     sinon.spy(@tr.stats, 'inc')
 
-    @tr.error "go", "Hello", {'err': 1}
+    @tr.fail "go", "Hello", {'err': 1}
 
     @tr.log.error.calledWith("Hello", {'err': 1}).should.be.ok
     @tr.stats.inc.calledWith('tracer.go.error').should.be.ok
