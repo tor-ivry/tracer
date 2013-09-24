@@ -1,0 +1,19 @@
+{
+  "name": "tracer",
+  "version": "0.0.1",
+  "description": "trace common operations",
+  "homepage": "",
+  "author": "",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "coffee-script": ">= 1.2.0",
+    "mocha": "1.12.0",
+    "should": "",
+    "sinon": "~1.7.3",
+    "supertest": ""
+  },
+  "engines": {
+    "node": ">=0.4.0"
+  }
+}
