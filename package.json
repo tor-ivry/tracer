@@ -4,6 +4,7 @@
   "description": "trace common operations",
   "homepage": "",
   "author": "",
+  "main": "lib/tracer.js",
   "dependencies": {
   },
   "devDependencies": {

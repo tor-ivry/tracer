@@ -7,3 +7,5 @@ test-lib:
 		--bail \
 		spec/lib/**/*.coffee
 
+build:
+	coffee --compile lib/*.coffee
